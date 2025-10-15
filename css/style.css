@@ -1,0 +1,97 @@
+/* Root font-size for rem units: responsive between 14px and 18px */
+html {
+    box-sizing: border-box;
+    /* Use clamp to keep rem sizes comfortable on different viewports
+         Converted values: 14px = 0.875rem, 12px = 0.75rem, 18px = 1.125rem */
+    font-size: clamp(0.875rem, 1.4vw + 0.75rem, 1.125rem);
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+/* Body typography */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.45;
+    color: #111;
+    background: #f5f7fa;
+}
+
+#title {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.gallery-section {
+    background-color: rgb(35, 153, 90);
+    padding: 1.25rem;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+}
+
+.gallery-section img {
+    width: 13.375rem; 
+    height: 10.25rem;
+    margin: 0.625rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* Thumb wrapper to position caption overlay */
+.thumb {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.thumb img {
+    display: block;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.5rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%);
+    color: #fff;
+    font-size: 0.875rem;
+    transform: translateY(100%);
+    transition: transform 180ms ease, opacity 180ms ease;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.thumb:hover .caption,
+.thumb:focus-within .caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.thumb:hover img,
+.thumb:focus-within img {
+    transform: scale(1.03);
+}
+
+    
+.gallery-section img:hover {
+    transform: scale(1.05);
+}
