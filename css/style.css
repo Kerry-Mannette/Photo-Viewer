@@ -43,7 +43,7 @@ body {
 
 .gallery-section img {
     width: 13.375rem; 
-    height: 10.25rem;
+    height: 13.25rem;
     margin: 0.625rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -93,5 +93,7 @@ body {
 
     
 .gallery-section img:hover {
-    transform: scale(1.05);
+    filter: brightness(0.8);
+    transform: translateY(-2px) scale(1.05);
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
