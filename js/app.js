@@ -2,6 +2,7 @@
 var zoomed = document.getElementById("zoom");
 var zoomedImg = document.getElementById("imgHover");
 var captionText = document.getElementById("caption");
+var descText = document.getElementById("desc");
 var span = document.getElementsByClassName("close")[0];
 
 // Get all images inside .thumb and attach click event
@@ -11,6 +12,8 @@ thumbs.forEach(function(img) {
     zoomed.style.display = "block";
     zoomedImg.src = this.src;
     captionText.innerHTML = this.alt;
+    descText.innerHTML = this.parentElement.querySelector(".desc").innerHTML;
+
   });
 });
 
