@@ -37,7 +37,6 @@ body {
 }
 
 .gallery-section {
-    /* soft gradient backdrop using accent colors */
     background: linear-gradient(180deg, rgba(0,168,132,0.06), rgba(15,102,255,0.04));
     padding: 1.25rem;
     min-height: 70vh;
@@ -113,26 +112,14 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.footer {
-    padding: 1rem;
-    background-color: var(--footer-bg);
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.875rem;
-}
-
-footer p {
-    text-align: center;
-}   
 
 
+/* The Zoomed Image Modal */
 
 #zoom {
   display: none; 
   position: absolute;
-  padding: 50px;
+  padding: 3.125rem; /* 50px */
   left: 0;
   top: 0;
   width: 100%; 
@@ -149,25 +136,25 @@ footer p {
     align-self:center;
     justify-content: center;
     position: absolute;
-    top: 80px;
-    right: 200px;
-    max-width: 500px;
+    top: 5rem; /* 80px */
+    right: 10.5rem; /* 200px */
+    max-width: 31.25rem; /* 500px */
     color: #eee;
     text-align: right;;
 }
 
 /* Caption of zoomed Image */
 #caption {
-  font-size: 50px;
-  font-weight: bold;
-  margin-bottom: 50px;
+    font-size: 3.125rem; /* 50px */
+    font-weight: bold;
+    margin-bottom: 3.125rem; /* 50px */
   color: white;
 }
 
 /* Description styling */
 #desc {
     color: white;
-  font-size: 20px;
+    font-size: 1.25rem; /* 20px */
 }
 
 
@@ -180,9 +167,13 @@ footer p {
 }
 
 .zoomed-content{
-    min-width: 600px;
-    min-height: 600px;
+    min-width: 37.5rem; /* 600px */
+    min-height: 37.5rem; /* 600px */
     height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 
 @-webkit-keyframes zoom {
@@ -197,10 +188,10 @@ footer p {
 
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+    top: 0.9375rem; /* 15px */
+    right: 2.1875rem; /* 35px */
   color: white;
-  font-size: 40px;
+    font-size: 2.5rem; /* 40px */
   font-weight: bold;
   transition: 0.3s;
 }
@@ -211,3 +202,42 @@ footer p {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Nav buttons for modal */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+.nav.prev { left: 1rem; }
+.nav.next { right: 1rem; }
+
+
+/* Footer styling */
+
+.footer {
+    padding: 1rem;
+    background-color: var(--footer-bg);
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+footer p {
+    text-align: center;
+}   
+
+
+
+
