@@ -28,16 +28,15 @@ function render(index) {
 }
 
 // Open on thumbnail click via for loop
-for (var j = 0; j < thumbNodes.length; j++) {
-  (function(idx){
-    var imgEl = thumbNodes[idx].querySelector('img');
-    imgEl.addEventListener('click', function(){
-      render(idx);
-      zoomed.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    });
-  })(j);
+for (let j = 0; j < thumbNodes.length; j++) {
+  let imgEl = thumbNodes[j].querySelector('img');
+  imgEl.addEventListener('click', function() {
+    render(j);
+    zoomed.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
 }
+
 
 // Controls
 if (prevBtn) prevBtn.addEventListener('click', function(){ render(currentIndex - 1); });
