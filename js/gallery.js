@@ -32,7 +32,7 @@ for (let j = 0; j < thumbNodes.length; j++) {
   let imgEl = thumbNodes[j].querySelector('img');
   imgEl.addEventListener('click', function() {
     render(j);
-    zoomed.style.display = 'block';
+    zoomed.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   });
 }
