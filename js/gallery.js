@@ -1,26 +1,26 @@
 // Elements
-var zoomed = document.getElementById('zoom');
-var zoomedImg = document.getElementById('imgHover');
-var captionText = document.getElementById('caption');
-var descText = document.getElementById('desc');
-var span = document.getElementsByClassName('close')[0];
-var prevBtn = document.getElementById('prevBtn');
-var nextBtn = document.getElementById('nextBtn');
+let zoomed = document.getElementById('zoom');
+let zoomedImg = document.getElementById('imgHover');
+let captionText = document.getElementById('caption');
+let descText = document.getElementById('desc');
+let span = document.getElementsByClassName('close')[0];
+let prevBtn = document.getElementById('prevBtn');
+let nextBtn = document.getElementById('nextBtn');
 
 // Build slides from DOM using a for loop
-var thumbNodes = document.querySelectorAll('.thumb');
-var slides = [];
-for (var i = 0; i < thumbNodes.length; i++) {
-  var imgEl = thumbNodes[i].querySelector('img');
-  var descEl = thumbNodes[i].querySelector('.desc');
+let thumbNodes = document.querySelectorAll('.thumb');
+let slides = [];
+for (let i = 0; i < thumbNodes.length; i++) {
+  let imgEl = thumbNodes[i].querySelector('img');
+  let descEl = thumbNodes[i].querySelector('.desc');
   slides.push({ src: imgEl.src, alt: imgEl.alt || '', desc: descEl ? descEl.innerHTML : '' });
 }
 
-var currentIndex = 0;
+let currentIndex = 0;
 
 function render(index) {
   currentIndex = (index + slides.length) % slides.length; // wrap around
-  var s = slides[currentIndex];
+  let s = slides[currentIndex];
   zoomedImg.src = s.src;
   zoomedImg.alt = s.alt;
   captionText.textContent = s.alt;
