@@ -6,6 +6,8 @@ let descText = document.getElementById('desc');
 let span = document.getElementsByClassName('close')[0];
 let prevBtn = document.getElementById('prevBtn');
 let nextBtn = document.getElementById('nextBtn');
+let i = 0;
+let time = 3000;
 
 // Build slides from DOM using a for loop
 let thumbNodes = document.querySelectorAll('.thumb');
@@ -36,6 +38,16 @@ for (let j = 0; j < thumbNodes.length; j++) {
     document.body.style.overflow = 'hidden';
   });
 }
+function autoScroll() {
+  render(i); 
+  if (i < slides.length - 1) {
+    i++;
+  } else {
+    i = 0;
+  }
+  setTimeout(autoScroll, time); 
+}
+autoScroll();
 
 
 // Controls
@@ -55,4 +67,6 @@ document.addEventListener('keydown', function(e){
   else if (e.key === 'ArrowRight') { nextBtn && nextBtn.click(); }
   else if (e.key === 'ArrowLeft') { prevBtn && prevBtn.click(); }
 });
+
+
 
