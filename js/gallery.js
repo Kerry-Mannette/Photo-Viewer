@@ -8,6 +8,7 @@ let prevBtn = document.getElementById('prevBtn');
 let nextBtn = document.getElementById('nextBtn');
 let i = 0;
 let time = 3000;
+let slideShowTimer;
 
 // Build slides from DOM using a for loop
 let thumbNodes = document.querySelectorAll('.thumb');
@@ -45,9 +46,10 @@ function autoScroll() {
   } else {
     i = 0;
   }
-  setTimeout(autoScroll, time); 
+  slideShowTimer = setTimeout(autoScroll, time);
 }
 autoScroll();
+zoomedImg.addEventListener('click', () => clearTimeout(slideShowTimer));
 
 
 // Controls
